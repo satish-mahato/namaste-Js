@@ -21,17 +21,32 @@
 // }
 /************************************************************************* */
 
-const getPromise = () => {
+// const getPromise = () => {
+//   return new Promise((resolve, reject) => {
+//     console.log("I am promise");
+//     // resolve("sucsess");
+//     reject("Network Error");
+//   });
+// };
+// let promise = getPromise();
+// promise.then((res) => {
+//   console.log("promise filled", res);
+// });
+// promise.catch((err) => {
+//   console.log("Promise reject", err);
+// });
+
+//************************************************************************************ */
+function asynFunc() {
   return new Promise((resolve, reject) => {
-    console.log("I am promise");
-    // resolve("sucsess");
-    reject("Network Error");
+    setTimeout(() => {
+      console.log("Some data 1.........");
+      resolve("Success");
+    }, 4000);
   });
-};
-let promise = getPromise();
-promise.then((res) => {
-  console.log("promise filled", res);
-});
-promise.catch((err) => {
-  console.log("Promise reject", err);
+}
+console.log("Fetching data 1......");
+let p1 = asynFunc();
+p1.then((res) => {
+  console.log(res);
 });
