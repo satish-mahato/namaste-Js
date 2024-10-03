@@ -37,16 +37,44 @@
 // });
 
 //************************************************************************************ */
-function asynFunc() {
+// function asynFunc() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       console.log("Some data 1.........");
+//       resolve("Success");
+//     }, 4000);
+//   });
+// }
+// console.log("Fetching data 1......");
+// let p1 = asynFunc();
+// p1.then((res) => {
+//   console.log(res);
+// });
+
+//************************************************************************************ */
+function asynFunc1() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      console.log("Some data 1.........");
-      resolve("Success");
+      console.log("data 1 printing....");
+      resolve("success");
     }, 4000);
   });
 }
-console.log("Fetching data 1......");
-let p1 = asynFunc();
+function asynFunc2() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("data 222 printing....");
+      resolve("success");
+    }, 4000);
+  });
+}
+console.log("printing data111111");
+let p1 = asynFunc1();
 p1.then((res) => {
   console.log(res);
+  console.log("printing data22222222");
+  let p2 = asynFunc2();
+  p2.then((res) => {
+    console.log(res);
+  });
 });
